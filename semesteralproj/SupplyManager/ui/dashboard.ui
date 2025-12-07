@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dashboard</class>
+ <widget class="QMainWindow" name="Dashboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1994</width>
+    <height>1668</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Inventory Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Label1{
+background-color: rgb(0, 85, 255);
+}
+#Dashboard{
+background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <widget class="QLabel" name="label1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>1481</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>150</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>3000</width>
+      <height>3000</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Script MT Bold</family>
+      <pointsize>22</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.0597015, y1:0.864, x2:1, y2:0, stop:0 rgba(0, 0, 193, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 25px;
+font-style: bold;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>    📚 School Supplies Inventory      
+    Manage and track school supplies stock efficiently</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addProductBtn">
+    <property name="geometry">
+     <rect>
+      <x>1720</x>
+      <y>110</y>
+      <width>145</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>145</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>150</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 15px;
+color: rgb(85, 170, 255);</string>
+    </property>
+    <property name="text">
+     <string>+ Add Item</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>351</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+#label{
+color: rgb(0, 0, 0);}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QFrame" name="topBar">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>1</y>
+       <width>351</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#topBar {
+    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Total Items</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>291</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../../Users/zaned/Downloads/Untitled design.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="items">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bodoni MT</family>
+       <pointsize>27</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(44, 144, 255);</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <zorder>label_3</zorder>
+    <zorder>topBar</zorder>
+    <zorder>label</zorder>
+    <zorder>items</zorder>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems1">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>240</y>
+      <width>351</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems1 {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems1 {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="topBar_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>351</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#topBar_2 {
+ 
+	background-color: qlineargradient(spread:pad, x1:0.0597015, y1:0.864, x2:1, y2:0, stop:0 rgba(193, 74, 0, 255), stop:1 rgba(255, 255, 255, 255));
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Low Stock Alerts</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>271</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../../Users/zaned/Downloads/Untitled design (2).png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lowstock">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bodoni MT</family>
+       <pointsize>27</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(207, 7, 9);</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <zorder>label_7</zorder>
+    <zorder>topBar_2</zorder>
+    <zorder>label_5</zorder>
+    <zorder>lowstock</zorder>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems3">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>240</y>
+      <width>361</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems3 {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems3 {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="topBar_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>361</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#topBar_4 {
+ 
+	background-color: rgb(109, 226, 253);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>281</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../../Users/zaned/Downloads/Untitled design (3).png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="category">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>291</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bodoni MT</family>
+       <pointsize>27</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(109, 226, 253);</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <zorder>label_11</zorder>
+    <zorder>topBar_4</zorder>
+    <zorder>label_10</zorder>
+    <zorder>category</zorder>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems2">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>240</y>
+      <width>341</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems2 {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems2 {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QFrame" name="topBar_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>341</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#topBar_3 {
+ 
+	background-color: qconicalgradient(cx:0.545, cy:1, angle:0, stop:0.0348259 rgba(0, 103, 27, 255), stop:1 rgba(255, 255, 255, 255));
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Total Value</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="value">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>291</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bodoni MT</family>
+       <pointsize>27</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(79, 150, 97);</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>301</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../../Users/zaned/Downloads/Untitled design (4).png</pixmap>
+     </property>
+    </widget>
+    <zorder>label_12</zorder>
+    <zorder>topBar_3</zorder>
+    <zorder>label_6</zorder>
+    <zorder>value</zorder>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>711</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Specialty</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems4 {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems4 {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="graphFrame">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>651</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="cardTotalItems5">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>530</y>
+      <width>721</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#cardTotalItems5 {
+    background-color: white;
+    border-radius: 20px;
+    border-top: 5px solid qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:0,
+        stop:0 #3aa0ff, stop:1 #005eff
+    );
+}
+
+QFrame#cardTotalItems5 {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="graphFrame_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>651</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>1160</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>980</y>
+      <width>1451</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#frame {
+    background-color: white;
+    border-radius: 20px;
+   
+}
+
+QFrame#frame {
+    /* Drop shadow simulation */
+    border: 1px solid rgba(0,0,0,20);
+}
+
+    </string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>1041</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(232, 232, 232);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="placeholderText">
+      <string>Search by name, SKU, or supplier...</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>1140</x>
+       <y>30</y>
+       <width>291</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* Main combo box styling */
+QComboBox {
+    background-color: #ffffff;
+    border: 2px solid #3498DB;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #2C3E50;
+    min-width: 150px;
+	color: rgb(0, 0, 0);
+}
+
+/* Hover effect */
+QComboBox:hover {
+    border: 2px solid #2980B9;
+    background-color: #ECF6FC;
+}
+
+/* Drop-down arrow area */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left-width: 1px;
+    border-left-color: #3498DB;
+    border-left-style: solid;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+	color: rgb(0, 0, 0);
+}
+
+/* Arrow icon */
+QComboBox::down-arrow {
+    width: 14px;
+    height: 14px;
+    image: url(:\Users\zaned\Downloads\arror.png); /* Replace with your resource path */
+}
+
+/* List view (dropdown items) */
+QComboBox QAbstractItemView {
+    border: 2px solid #3498DB;
+    border-radius: 8px;
+    background-color: #ffffff;
+    selection-background-color: #2980B9;
+    selection-color: white;
+   
+	color: rgb(0, 0, 0);
+}
+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTableWidget" name="inventoryTable">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>1100</y>
+      <width>1451</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWidget {
+    background: #ffffff;
+    border-radius: 8px;
+    gridline-color: #eeeeee;
+    font-size: 14px;
+}
+
+QHeaderView::section {
+    background-color: #f5f0ff;
+    padding: 6px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Change text color of all table items */
+QTableWidget::item {
+    padding: 10px;
+    color: rgb(255, 0, 0); /* &lt;-- RED text */
+}
+</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>SKU</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Product Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Category</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Status</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Supplier</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Last Updated</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Actions</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

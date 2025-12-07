@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StockGraphWidget</class>
+ <widget class="QWidget" name="StockGraphWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Stock Bar Graph</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="text">
+      <string>Stock Levels (Auto-Updating)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- Only the Bar Graph -->
+   <item>
+    <widget class="QChartView" name="chartView">
+     <property name="minimumSize">
+      <size>
+       <width>400</width>
+       <height>300</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
+
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
